@@ -16,8 +16,4 @@ describe("Books", function(){
             expect(books.total[1]).toEqual("Mercedes")
         });
     
-        it(" ", function(){
-            
-        });
-    
     });
