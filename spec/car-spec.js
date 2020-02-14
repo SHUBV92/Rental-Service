@@ -7,8 +7,8 @@ let car
     })
 
     it("Can add a car name to the collection", function(){
-        car.make("BMW")
-        expect(car.collection[0]).toEqual({name: "BMW"})
+        car.make("BMW", "2L", "2020")
+        expect(car.collection[0]).toEqual({name: "BMW", engineSize: "2L", Reg: "2020"})
     });
 
     it("Can add a new car object into an array", function(){
