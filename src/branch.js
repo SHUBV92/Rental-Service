@@ -12,9 +12,5 @@ Branch.prototype = {
         this.books.splice(cars)
     },
     
-    rentalperiod: function(number){
-        this.contract.days = number+" "+"days"
-    }
-
 
 }

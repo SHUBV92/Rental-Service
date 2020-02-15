@@ -19,10 +19,6 @@ var branch
       expect(branch.books.length).toEqual(1)
     });
 
-    it("Contract shows how many a car has been rented for", function(){
-      branch.rentalperiod(3)
-      expect(branch.contract).toEqual({days:"3 days"})
-    });
     
 
   });

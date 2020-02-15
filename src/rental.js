@@ -17,11 +17,20 @@ Rental.prototype = {
         this.rates.Luxury = "£"+Luxury
         this.rates.Premium = "£"+Premium
     },
-    assign: function(days, group){
+    assign: function(id, days, group){
         this.contract.push({
+            id: id,
             rentalDays:days, 
             group: group
         })
     },
+
+    total: function(){
+
+    },
+
+    rentalperiod: function(number){
+        this.contract[0].rentalDays = number+" "+"days"
+    }
 
 }
