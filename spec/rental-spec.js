@@ -10,10 +10,10 @@ var rental
         it("Sets a daily price to a rental list", function(){
             rental.price(10, 30, 50, 150)
             expect(rental.rates).toEqual({
-                City:"£10", 
-                Saloon: "£30",
-                Luxury: "£50",
-                Premium: "£150"
+                City:10, 
+                Saloon: 30,
+                Luxury: 50,
+                Premium: 150
             });
         });
 
@@ -23,12 +23,16 @@ var rental
             expect(rental.contract[0]).toEqual({
                 id: 1, 
                 rentalDays: 10, 
-                group: '£50'
+                group: 50
             });
         });
 
-        it("Shows the collection of cars ", function(){
-
+        it("Gives a total price of the rental days", function(){
+            rental.price(10, 30, 50, 150) 
+            rental.assign(1, 10, rental.rates.Luxury)            
+            rental.assign(2, 5, rental.rates.Premium)            
+            rental.total(0, "Luxury")
+            expect(rental.contract[0].total).toEqual(500)
         });
 
         it("Can Overwrite the rental Days", function(){

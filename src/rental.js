@@ -6,17 +6,17 @@ function Rental(car) {
         Luxury: null,
         Premium: null
     }
-
     this.contract = []
 }
-//Set Price per day for each car 
 Rental.prototype = {
+    // Set List Price per day for each car 
     price: function(City, Saloon, Luxury, Premium){
-        this.rates.City = "£"+City
-        this.rates.Saloon = "£"+Saloon
-        this.rates.Luxury = "£"+Luxury
-        this.rates.Premium = "£"+Premium
+        this.rates.City = City
+        this.rates.Saloon = Saloon
+        this.rates.Luxury = Luxury
+        this.rates.Premium = Premium
     },
+    // Creates the Rental Contract
     assign: function(id, days, group){
         this.contract.push({
             id: id,
@@ -25,8 +25,11 @@ Rental.prototype = {
         })
     },
 
-    total: function(){
-
+    total: function(ele, group){
+        if(group === "Luxury"){
+        this.contract[ele].total = this.rates.Luxury * 
+        this.contract[ele].rentalDays
+        }
     },
 
     rentalperiod: function(number){
