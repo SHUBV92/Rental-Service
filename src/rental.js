@@ -24,14 +24,18 @@ Rental.prototype = {
             group: group
         })
     },
-
+    // Gives a total of the rental days 
     total: function(ele, group){
         if(group === "Luxury"){
         this.contract[ele].total = this.rates.Luxury * 
         this.contract[ele].rentalDays
         }
+        else if(group === "Premium"){
+            this.contract[ele].total = this.rates.Premium * 
+            this.contract[ele].rentalDays
+        }
     },
-
+    // Overwrites the # of rental Days 
     rentalperiod: function(number){
         this.contract[0].rentalDays = number+" "+"days"
     }

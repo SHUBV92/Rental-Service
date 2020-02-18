@@ -29,8 +29,14 @@ var rental
 
         it("Gives a total price of the rental days", function(){
             rental.price(10, 30, 50, 150) 
-            rental.assign(1, 10, rental.rates.Luxury)            
             rental.assign(2, 5, rental.rates.Premium)            
+            rental.total(1, "Premium")
+            expect(rental.contract[1].total).toEqual(750)
+
+        });
+        it("Gives a total price of the rental days", function(){
+            rental.price(10, 30, 50, 150) 
+            rental.assign(1, 10, rental.rates.Luxury)            
             rental.total(0, "Luxury")
             expect(rental.contract[0].total).toEqual(500)
         });
