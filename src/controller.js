@@ -1,0 +1,6 @@
+const booking = new Bookings(car, branch, user)
+const books = new Books(car)
+const branch = new Branch()
+const rental = new rental()
+const car = new Car()
+const user = new user()
